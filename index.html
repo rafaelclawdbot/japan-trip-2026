@@ -21,7 +21,7 @@
         }
         
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
             background: white;
             border-radius: 20px;
@@ -65,19 +65,41 @@
         .section-header h2 {
             color: #e74c3c;
             font-size: 2em;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
         }
         
         .hotel-info {
-            background: linear-gradient(135deg, #fff5f7 0%, #fffbf0 100%);
+            background: #f8f9fa;
             padding: 15px;
             border-radius: 10px;
-            margin-bottom: 10px;
-            border-left: 5px solid #e74c3c;
+            margin-bottom: 15px;
+            border-left: 4px solid #3498db;
         }
         
-        .hotel-info strong {
-            color: #e74c3c;
+        .hotel-info h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+        
+        .hotel-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            font-size: 0.95em;
+        }
+        
+        .detail-item {
+            padding: 5px 0;
+        }
+        
+        .detail-label {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .detail-value {
+            color: #555;
         }
         
         .hotel-info a {
@@ -142,6 +164,19 @@
             border-bottom: 1px solid #2980b9;
         }
         
+        .alert {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            color: #856404;
+        }
+        
+        .alert strong {
+            color: #e67e22;
+        }
+        
         .highlight {
             background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
             padding: 20px;
@@ -175,6 +210,10 @@
             .section-header h2 {
                 font-size: 1.5em;
             }
+            
+            .hotel-details {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -187,131 +226,118 @@
         </header>
         
         <div class="content">
-            <!-- TOKYO INÍCIO -->
+            <!-- OVERVIEW -->
             <div class="section">
                 <div class="section-header">
-                    <h2>TOKYO – INÍCIO</h2>
-                    <div class="hotel-info">
-                        <strong>Hotel:</strong> Sotetsu Fresa Inn Hamamatsucho-Daimon<br>
-                        <strong>Telefone:</strong> +81 3 3864 3500
+                    <h2>Visão Geral da Viagem</h2>
+                </div>
+                <div class="hotel-info">
+                    <div class="hotel-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Período:</span>
+                            <span class="detail-value">22 de março - 4 de abril de 2026 (13 dias)</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Viajantes:</span>
+                            <span class="detail-value">Rafael & Ariana</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Cidades:</span>
+                            <span class="detail-value">Osaka → Kyoto → Tóquio</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Total Hospedagem:</span>
+                            <span class="detail-value">16+ noites reservadas</span>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="day">
-                    <div class="day-date">16 MAR</div>
-                    <ul class="day-activities">
-                        <li>17:00 – Chegada / Check-in</li>
-                        <li>18:00 – <a href="https://www.google.com/maps/search/?api=1&query=Tokyo+Tower" target="_blank">Tokyo Tower</a></li>
-                        <li>Noite livre</li>
-                    </ul>
-                </div>
-                
-                <div class="day">
-                    <div class="day-date">17 MAR</div>
-                    <ul class="day-activities">
-                        <li>09:00 – <a href="https://www.google.com/maps/search/?api=1&query=Meiji+Shrine+Tokyo" target="_blank">Meiji</a> / <a href="https://www.google.com/maps/search/?api=1&query=Harajuku+Tokyo" target="_blank">Harajuku</a></li>
-                        <li>15:00 – <a href="https://www.google.com/maps/search/?api=1&query=Shibuya+Crossing+Tokyo" target="_blank">Shibuya</a></li>
-                        <li>19:00 – <a href="https://www.google.com/maps/search/?api=1&query=Shinjuku+Tokyo" target="_blank">Shinjuku</a></li>
-                    </ul>
-                </div>
-                
-                <div class="day">
-                    <div class="day-date">18 MAR</div>
-                    <ul class="day-activities">
-                        <li>Manhã – <a href="https://www.google.com/maps/search/?api=1&query=Tsukiji+Outer+Market+Tokyo" target="_blank">Tsukiji</a> / <a href="https://www.google.com/maps/search/?api=1&query=Ginza+Tokyo" target="_blank">Ginza</a></li>
-                        <li>Tarde – <a href="https://www.google.com/maps/search/?api=1&query=Haneda+Airport+Tokyo" target="_blank">Aeroporto</a></li>
-                        <li>Voo para Hokkaido</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- HOKKAIDO -->
-            <div class="section">
-                <div class="section-header">
-                    <h2>HOKKAIDO (SAPPORO)</h2>
-                    <div class="hotel-info">
-                        <strong>Hotel:</strong> Hotel Vista Sapporo Odori
-                    </div>
-                </div>
-                
-                <div class="day">
-                    <div class="day-date">19 MAR</div>
-                    <ul class="day-activities">
-                        <li>21:00 – Chegada</li>
-                        <li>23:00 – Hotel</li>
-                    </ul>
-                </div>
-                
-                <div class="day">
-                    <div class="day-date">20 MAR</div>
-                    <ul class="day-activities">
-                        <li>08:30 – <a href="https://www.google.com/maps/search/?api=1&query=Jozankei+Onsen+Hokkaido" target="_blank">Jozankei</a></li>
-                        <li>14:00 – <a href="https://www.google.com/maps/search/?api=1&query=Jozankei+Private+Onsen" target="_blank">Onsen privada</a></li>
-                        <li>18:00 – Retorno</li>
-                    </ul>
-                </div>
-                
-                <div class="day">
-                    <div class="day-date">21 MAR</div>
-                    <ul class="day-activities">
-                        <li>09:00 – <a href="https://www.google.com/maps/search/?api=1&query=Sapporo+Odori+Park" target="_blank">Sapporo cidade</a></li>
-                        <li>16:30 – <a href="https://www.google.com/maps/search/?api=1&query=Mount+Moiwa+Sapporo" target="_blank">Mount Moiwa</a></li>
-                    </ul>
-                </div>
-                
-                <div class="day">
-                    <div class="day-date">22 MAR</div>
-                    <ul class="day-activities">
-                        <li>08:30 – <a href="https://www.google.com/maps/search/?api=1&query=Otaru+Canal+Hokkaido" target="_blank">Otaru</a></li>
-                        <li>17:00 – Retorno</li>
-                    </ul>
-                </div>
-                
-                <div class="day">
-                    <div class="day-date">23 MAR</div>
-                    <ul class="day-activities">
-                        <li>07:30 – <a href="https://www.google.com/maps/search/?api=1&query=Sapporo+Kokusai+Ski+Resort" target="_blank">Ski (Sapporo Kokusai)</a></li>
-                        <li>18:00 – Retorno</li>
-                    </ul>
                 </div>
             </div>
             
             <!-- OSAKA -->
             <div class="section">
                 <div class="section-header">
-                    <h2>OSAKA</h2>
-                    <div class="hotel-info">
-                        <strong>Hotel:</strong> <a href="https://www.google.com/maps/search/?api=1&query=Arrow+Hotel+Shinsaibashi" target="_blank">Arrow Hotel in Shinsaibashi</a><br>
-                        <strong>Telefone:</strong> +81 6 6211 8441<br>
-                        <strong>Extra:</strong> Café da manhã gratuito!
+                    <h2>OSAKA (23-26 de março)</h2>
+                </div>
+                
+                <div class="hotel-info">
+                    <h3>Arrow Hotel in ShinsaiBashi</h3>
+                    <div class="hotel-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Endereço:</span>
+                            <span class="detail-value"><a href="https://www.google.com/maps/search/?api=1&query=Arrow+Hotel+Shinsaibashi+Osaka+2-9-32" target="_blank">Chuo-ku Nishi Shinsaibashi 2-9-32, Osaka 542-0086</a></span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Check-in:</span>
+                            <span class="detail-value">23 março - a partir das 12:30</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Check-out:</span>
+                            <span class="detail-value">26 março - até 12:00</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Noites:</span>
+                            <span class="detail-value">3 noites</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Confirmação:</span>
+                            <span class="detail-value">6960.710.640 | PIN: 4858</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Quarto:</span>
+                            <span class="detail-value">Duplo Standard (1 cama de casal)</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Café da Manhã:</span>
+                            <span class="detail-value">✓ Incluído</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">WiFi:</span>
+                            <span class="detail-value">✓ Gratuito</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Telefone:</span>
+                            <span class="detail-value">+81 6 6211 8441</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Preço:</span>
+                            <span class="detail-value">R$ 1.329 (¥39.060)</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Cancelamento Gratuito:</span>
+                            <span class="detail-value">Até 20 de março</span>
+                        </div>
                     </div>
                 </div>
                 
                 <div class="day">
-                    <div class="day-date">24 MAR</div>
+                    <div class="day-date">23 MAR (Domingo)</div>
                     <ul class="day-activities">
-                        <li>Chegada / <a href="https://www.google.com/maps/search/?api=1&query=Dotonbori+Osaka" target="_blank">Dotonbori</a></li>
+                        <li>17:00 – Chegada / Check-in</li>
+                        <li>Explorar <a href="https://www.google.com/maps/search/?api=1&query=Dotonbori+Osaka" target="_blank">Dotonbori</a></li>
                     </ul>
                 </div>
                 
                 <div class="day">
-                    <div class="day-date">25 MAR</div>
+                    <div class="day-date">24 MAR (Segunda)</div>
                     <ul class="day-activities">
-                        <li><a href="https://www.google.com/maps/search/?api=1&query=Nara+Park+Japan" target="_blank">Nara</a></li>
+                        <li><a href="https://www.google.com/maps/search/?api=1&query=Shinsekai+Osaka" target="_blank">Shinsekai</a> / <a href="https://www.google.com/maps/search/?api=1&query=Kuromon+Market+Osaka" target="_blank">Kuromon Market</a></li>
+                        <li>Explorar bairro de Shinsaibashi</li>
                     </ul>
                 </div>
                 
                 <div class="day">
-                    <div class="day-date">26 MAR</div>
+                    <div class="day-date">25 MAR (Terça)</div>
                     <ul class="day-activities">
-                        <li><a href="https://www.google.com/maps/search/?api=1&query=Universal+Studios+Japan+Osaka" target="_blank">Universal Studios</a> ou dia livre</li>
+                        <li><a href="https://www.google.com/maps/search/?api=1&query=Nara+Park+Japan" target="_blank">Dia em Nara</a> (opcional)</li>
+                        <li><a href="https://www.google.com/maps/search/?api=1&query=Universal+Studios+Japan+Osaka" target="_blank">Universal Studios</a> ou explorar mais Osaka</li>
                     </ul>
                 </div>
                 
                 <div class="day">
-                    <div class="day-date">27 MAR</div>
+                    <div class="day-date">26 MAR (Quarta)</div>
                     <ul class="day-activities">
-                        <li>Dia livre / <a href="https://www.google.com/maps/search/?api=1&query=Shinsekai+Osaka" target="_blank">Shinsekai</a> / <a href="https://www.google.com/maps/search/?api=1&query=Kuromon+Market+Osaka" target="_blank">Kuromon</a></li>
+                        <li>Check-out até 12:00</li>
+                        <li>Deslocamento para Kyoto</li>
                     </ul>
                 </div>
             </div>
@@ -319,16 +345,32 @@
             <!-- KYOTO -->
             <div class="section">
                 <div class="section-header">
-                    <h2>KYOTO</h2>
-                    <div class="hotel-info">
-                        <strong>Hotel:</strong> (confirmar nome)
+                    <h2>KYOTO (26-27 de março)</h2>
+                </div>
+                
+                <div class="hotel-info">
+                    <h3>M's Hotel Sanjo Wakoku</h3>
+                    <div class="hotel-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Telefone:</span>
+                            <span class="detail-value">+81 75 320 4141</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">WiFi:</span>
+                            <span class="detail-value">✓ Gratuito</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Aviso:</span>
+                            <span class="detail-value">Imposto de acomodação pago no local</span>
+                        </div>
                     </div>
                 </div>
                 
                 <div class="day">
                     <div class="day-date">28 MAR</div>
                     <ul class="day-activities">
-                        <li><a href="https://www.google.com/maps/search/?api=1&query=Fushimi+Inari+Shrine+Kyoto" target="_blank">Fushimi Inari</a> / <a href="https://www.google.com/maps/search/?api=1&query=Higashiyama+District+Kyoto" target="_blank">Higashiyama</a></li>
+                        <li><a href="https://www.google.com/maps/search/?api=1&query=Fushimi+Inari+Shrine+Kyoto" target="_blank">Fushimi Inari</a> (milhares de torii vermelhos)</li>
+                        <li><a href="https://www.google.com/maps/search/?api=1&query=Higashiyama+District+Kyoto" target="_blank">Higashiyama</a> (distrito histórico)</li>
                     </ul>
                 </div>
                 
@@ -340,116 +382,193 @@
                 </div>
             </div>
             
-            <!-- TOKYO VOLTA -->
+            <!-- TOKYO -->
             <div class="section">
                 <div class="section-header">
-                    <h2>TOKYO – VOLTA</h2>
-                    <div class="hotel-info">
-                        <strong>Hotel:</strong> <a href="https://www.google.com/maps/search/?api=1&query=Hotel+LiVEMAX+Asakusabashi" target="_blank">Hotel LiVEMAX Asakusabashi-Eki Kitaguchi</a><br>
-                        <strong>Telefone:</strong> +81 3 3864 3500<br>
-                        <strong>PIN:</strong> 9338<br>
-                        <strong>Confirmação Booking:</strong> 6591.516.648<br>
-                        <strong>Localização:</strong> Taito-ku Yanagibashi 2-7-2<br>
-                        <strong>Coordenadas:</strong> N 035° 41.930, E 139° 47.249<br>
-                        <strong>Check-in:</strong> 30 MAR (15:00-22:30) | <strong>Check-out:</strong> 04 ABR (até 10:00)<br>
-                        <strong>Nota importante:</strong> Sem internet WiFi! Compre pocket WiFi ou eSIM antes
+                    <h2>TÓQUIO (27 mar - 4 abr)</h2>
+                </div>
+                
+                <div class="hotel-info">
+                    <h3>The Aoca Tokyo Kaminoge</h3>
+                    <div class="hotel-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Endereço:</span>
+                            <span class="detail-value"><a href="https://www.google.com/maps/search/?api=1&query=The+Aoca+Tokyo+Kaminoge+Setagaya" target="_blank">3 Chome-14-13 Kaminoge, Setagaya-ku, Tokyo 158-0093</a></span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Check-in:</span>
+                            <span class="detail-value">27 março - a partir das 15:00</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Check-out:</span>
+                            <span class="detail-value">4 abril - até 10:00</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Noites:</span>
+                            <span class="detail-value">8 noites</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Confirmação:</span>
+                            <span class="detail-value">6381.441.253 | PIN: 2626</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Tipo:</span>
+                            <span class="detail-value">Apartamento independente com cozinha completa</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Facilidades:</span>
+                            <span class="detail-value">Cozinha, máquina de lavar, sofá, mesa de jantar, micro-ondas, geladeira</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Telefone:</span>
+                            <span class="detail-value">+81 70 1560 5202</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Preço:</span>
+                            <span class="detail-value">R$ 4.865 (¥145.584) + ¥6.480 taxa de limpeza</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Cancelamento Gratuito:</span>
+                            <span class="detail-value">Até 24 de fevereiro</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Proximidades:</span>
+                            <span class="detail-value"><a href="https://www.google.com/maps/search/?api=1&query=Gotoh+Museum+Tokyo" target="_blank">Museu Gotoh</a>, Estação Kaminoge</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="alert">
+                    <strong>⚠️ Atenção:</strong> Há uma segunda reserva no mesmo período (30 mar - 4 abr) no HOTEL LiVEMAX Asakusabashi. Verifique se há necessidade de ambas ou se uma deve ser cancelada.
+                </div>
+                
+                <div class="hotel-info">
+                    <h3>HOTEL LiVEMAX Asakusabashi-Eki Kitaguchi</h3>
+                    <div class="hotel-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Endereço:</span>
+                            <span class="detail-value"><a href="https://www.google.com/maps/search/?api=1&query=Hotel+Livemax+Asakusabashi+Taito" target="_blank">Taito-ku Yanagibashi 2-7-2, Tokyo 111-0052</a></span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Check-in:</span>
+                            <span class="detail-value">30 março - entre 15:00 e 22:30</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Check-out:</span>
+                            <span class="detail-value">4 abril - até 10:00</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Noites:</span>
+                            <span class="detail-value">5 noites</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Confirmação:</span>
+                            <span class="detail-value">6591.516.648 | PIN: 9338</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Quarto:</span>
+                            <span class="detail-value">Duplo com cama de solteiro pequena - Não fumante</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">⚠️ WiFi:</span>
+                            <span class="detail-value">NÃO disponível - considere comprar pocket WiFi ou eSIM</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Telefone:</span>
+                            <span class="detail-value">+81 3 3864 3500</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Preço:</span>
+                            <span class="detail-value">R$ 4.704 (¥138.221)</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Cancelamento Gratuito:</span>
+                            <span class="detail-value">Até 28 de março</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Proximidades:</span>
+                            <span class="detail-value"><a href="https://www.google.com/maps/search/?api=1&query=Akihabara+Tokyo" target="_blank">Akihabara</a>, <a href="https://www.google.com/maps/search/?api=1&query=Hokusai+Museum+Tokyo" target="_blank">Museu Hokusai</a>, Rio Sumida</span>
+                        </div>
                     </div>
                 </div>
                 
                 <div class="day">
-                    <div class="day-date">30 MAR</div>
+                    <div class="day-date">30 MAR (Segunda)</div>
                     <ul class="day-activities">
-                        <li>Chegada / Check-in Hotel LiVEMAX / <a href="https://www.google.com/maps/search/?api=1&query=Shinjuku+Tokyo" target="_blank">Shinjuku</a></li>
+                        <li>Chegada / <a href="https://www.google.com/maps/search/?api=1&query=Shinjuku+Tokyo" target="_blank">Shinjuku</a></li>
                     </ul>
                 </div>
                 
                 <div class="day">
-                    <div class="day-date">31 MAR</div>
+                    <div class="day-date">31 MAR (Terça)</div>
                     <ul class="day-activities">
                         <li><a href="https://www.google.com/maps/search/?api=1&query=Tokyo+Disneyland" target="_blank">Disneyland</a></li>
                     </ul>
                 </div>
                 
                 <div class="day">
-                    <div class="day-date">01 ABR</div>
+                    <div class="day-date">01 ABR (Quarta)</div>
                     <ul class="day-activities">
                         <li>Dia livre</li>
                     </ul>
                 </div>
                 
                 <div class="day">
-                    <div class="day-date">02 ABR</div>
+                    <div class="day-date">02 ABR (Quinta)</div>
                     <ul class="day-activities">
                         <li><a href="https://www.google.com/maps/search/?api=1&query=Fuji-Q+Highland" target="_blank">Fuji-Q</a></li>
                     </ul>
                 </div>
                 
                 <div class="day">
-                    <div class="day-date">03 ABR</div>
+                    <div class="day-date">03 ABR (Sexta)</div>
                     <ul class="day-activities">
                         <li><a href="https://www.google.com/maps/search/?api=1&query=Ghibli+Park+Japan" target="_blank">Ghibli Park</a> (15:00) – Em decisão</li>
                     </ul>
                 </div>
                 
                 <div class="day">
-                    <div class="day-date">04 ABR</div>
+                    <div class="day-date">04 ABR (Sábado)</div>
                     <ul class="day-activities">
                         <li><a href="https://www.google.com/maps/search/?api=1&query=Asakusa+Tokyo" target="_blank">Asakusa</a> / <a href="https://www.google.com/maps/search/?api=1&query=Tokyo+Skytree" target="_blank">Skytree</a></li>
-                        <li>Check-out do Hotel LiVEMAX (até 10:00)</li>
+                        <li>Check-out ambos hotéis até 10:00</li>
                     </ul>
                 </div>
             </div>
             
-            <!-- F1 FINAL -->
-            <div class="section">
-                <div class="section-header">
-                    <h2>F1 FINAL</h2>
-                </div>
-                
-                <div class="day">
-                    <div class="day-date">05–06 ABR</div>
-                    <ul class="day-activities">
-                        <li>Deslocamentos / Programação F1</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- EXTRA -->
+            <!-- RESUMO FINANCEIRO -->
             <div class="highlight">
-                <h3>EXTRA</h3>
-                <div class="day">
-                    <div class="day-date">11 ABR</div>
-                    <ul class="day-activities">
-                        <li><a href="https://www.google.com/maps/search/?api=1&query=Tokyo+DisneySea" target="_blank">DisneySea</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- INFORMAÇÕES IMPORTANTES -->
-            <div class="highlight">
-                <h3>INFORMAÇÕES IMPORTANTES</h3>
-                <ul style="list-style: none; padding-left: 0;">
-                    <li style="padding: 8px 0; padding-left: 25px; position: relative;">
-                        <span style="position: absolute; left: 0;">⚠️</span>
-                        <strong>Hotel LiVEMAX (Tokyo):</strong> NÃO possui WiFi! Compre pocket WiFi ou eSIM local
-                    </li>
-                    <li style="padding: 8px 0; padding-left: 25px; position: relative;">
-                        <span style="position: absolute; left: 0;">✓</span>
-                        <strong>Arrow Hotel (Osaka):</strong> Café da manhã GRATUITO incluído
-                    </li>
-                    <li style="padding: 8px 0; padding-left: 25px; position: relative;">
-                        <span style="position: absolute; left: 0;">✓</span>
-                        <strong>Cancelamento Hotel LiVEMAX:</strong> Gratuito até 28 de março
-                    </li>
-                    <li style="padding: 8px 0; padding-left: 25px; position: relative;">
-                        <span style="position: absolute; left: 0;">📞</span>
-                        <strong>Contactar hotéis:</strong> Informar horário de chegada com antecedência
-                    </li>
-                    <li style="padding: 8px 0; padding-left: 25px; position: relative;">
-                        <span style="position: absolute; left: 0;">🎫</span>
-                        <strong>Seguro:</strong> Vouchers encontrados na pasta (verificar cobertura)
-                    </li>
-                </ul>
+                <h3>Resumo Financeiro (Hospedagem)</h3>
+                <table style="width: 100%; border-collapse: collapse;">
+                    <tr style="background: #f0f0f0;">
+                        <th style="padding: 8px; text-align: left; border-bottom: 2px solid #e67e22;">Hotel</th>
+                        <th style="padding: 8px; text-align: left; border-bottom: 2px solid #e67e22;">Cidade</th>
+                        <th style="padding: 8px; text-align: center; border-bottom: 2px solid #e67e22;">Noites</th>
+                        <th style="padding: 8px; text-align: right; border-bottom: 2px solid #e67e22;">Preço (R$)</th>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; border-bottom: 1px solid #ddd;">Arrow Hotel</td>
+                        <td style="padding: 8px; border-bottom: 1px solid #ddd;">Osaka</td>
+                        <td style="padding: 8px; text-align: center; border-bottom: 1px solid #ddd;">3</td>
+                        <td style="padding: 8px; text-align: right; border-bottom: 1px solid #ddd;">R$ 1.329</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; border-bottom: 1px solid #ddd;">The Aoca</td>
+                        <td style="padding: 8px; border-bottom: 1px solid #ddd;">Tóquio</td>
+                        <td style="padding: 8px; text-align: center; border-bottom: 1px solid #ddd;">8</td>
+                        <td style="padding: 8px; text-align: right; border-bottom: 1px solid #ddd;">R$ 4.865</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; border-bottom: 2px solid #e67e22;">LiVEMAX</td>
+                        <td style="padding: 8px; border-bottom: 2px solid #e67e22;">Tóquio</td>
+                        <td style="padding: 8px; text-align: center; border-bottom: 2px solid #e67e22;">5</td>
+                        <td style="padding: 8px; text-align: right; border-bottom: 2px solid #e67e22;">R$ 4.704</td>
+                    </tr>
+                    <tr style="font-weight: bold; background: #fff3cd;">
+                        <td style="padding: 8px;" colspan="3">TOTAL (sem Kyoto)</td>
+                        <td style="padding: 8px; text-align: right;">R$ 10.898</td>
+                    </tr>
+                </table>
             </div>
         </div>
         
