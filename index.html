@@ -189,6 +189,50 @@
             color: #856404;
         }
         
+        .summary {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 30px;
+            border-left: 5px solid #e67e22;
+        }
+        
+        .summary h3 {
+            color: #e67e22;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        
+        th {
+            background: #f0f0f0;
+            padding: 12px;
+            text-align: left;
+            border-bottom: 2px solid #e67e22;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        tr:hover {
+            background: #f9f9f9;
+        }
+        
+        .total-row {
+            font-weight: bold;
+            background: #fff3cd;
+            border-top: 2px solid #e67e22;
+        }
+        
         footer {
             background: #2c3e50;
             color: white;
@@ -208,6 +252,10 @@
             
             .section-header h2 {
                 font-size: 1.5em;
+            }
+            
+            table {
+                font-size: 0.9em;
             }
         }
     </style>
@@ -373,11 +421,11 @@
                         </div>
                         <div class="detail-item">
                             <span class="detail-label">Check-out:</span>
-                            <span class="detail-value">26 de março (quarta) - até 12:00</span>
+                            <span class="detail-value">27 de março (quinta) - até 12:00</span>
                         </div>
                         <div class="detail-item">
                             <span class="detail-label">Noites:</span>
-                            <span class="detail-value">3 noites</span>
+                            <span class="detail-value">4 noites</span>
                         </div>
                         <div class="detail-item">
                             <span class="detail-label">Confirmação:</span>
@@ -447,6 +495,10 @@
                     <h3>M's Hotel Sanjo Wakoku</h3>
                     <div class="hotel-details">
                         <div class="detail-item">
+                            <span class="detail-label">Telefone:</span>
+                            <span class="detail-value">+81 75 320 4141</span>
+                        </div>
+                        <div class="detail-item">
                             <span class="detail-label">Check-in:</span>
                             <span class="detail-value">27 de março (quinta) - tarde</span>
                         </div>
@@ -455,8 +507,8 @@
                             <span class="detail-value">29 de março (sábado)</span>
                         </div>
                         <div class="detail-item">
-                            <span class="detail-label">Telefone:</span>
-                            <span class="detail-value">+81 75 320 4141</span>
+                            <span class="detail-label">Noites:</span>
+                            <span class="detail-value">2 noites</span>
                         </div>
                         <div class="detail-item">
                             <span class="detail-label">WiFi:</span>
@@ -610,6 +662,78 @@
                         <li><a href="https://www.google.com/maps/search/?api=1&query=Tokyo+DisneySea" target="_blank">Tokyo DisneySea</a></li>
                     </ul>
                 </div>
+            </div>
+            
+            <!-- RESUMO FINANCEIRO -->
+            <div class="summary">
+                <h3>Resumo Financeiro - Hospedagem</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Hotel</th>
+                            <th>Cidade</th>
+                            <th>Data Check-in</th>
+                            <th>Data Check-out</th>
+                            <th>Noites</th>
+                            <th>Preço (R$)</th>
+                            <th>Preço (¥)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Sotetsu Fresa Inn</td>
+                            <td>Tokyo</td>
+                            <td>16 mar</td>
+                            <td>18 mar</td>
+                            <td>2</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Hotel Vista Sapporo</td>
+                            <td>Hokkaido</td>
+                            <td>19 mar</td>
+                            <td>23 mar</td>
+                            <td>4</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Arrow Hotel ShinsaiBashi</td>
+                            <td>Osaka</td>
+                            <td>23 mar</td>
+                            <td>27 mar</td>
+                            <td>4</td>
+                            <td>R$ 1.329</td>
+                            <td>¥39.060</td>
+                        </tr>
+                        <tr>
+                            <td>M's Hotel Sanjo Wakoku</td>
+                            <td>Kyoto</td>
+                            <td>27 mar</td>
+                            <td>29 mar</td>
+                            <td>2</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>The Aoca Tokyo Kaminoge</td>
+                            <td>Tokyo</td>
+                            <td>30 mar</td>
+                            <td>4 abr</td>
+                            <td>5</td>
+                            <td>R$ 4.865</td>
+                            <td>¥145.584</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td colspan="4"><strong>TOTAL (parcial - informações confirmadas)</strong></td>
+                            <td><strong>17 noites</strong></td>
+                            <td><strong>R$ 6.194*</strong></td>
+                            <td><strong>¥184.644*</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="margin-top: 15px; font-size: 0.9em; color: #555;"><em>* Valores parciais. Sotetsu Fresa Inn (Tokyo 1), Hotel Vista Sapporo e M's Hotel Sanjo (Kyoto) aguardam confirmação de preços.</em></p>
             </div>
         </div>
         
