@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Viagem ao Japão 🇯🇵 - Março 2026</title>
+    <title>Viagem ao Japão - Março/Abril 2026</title>
     <style>
         * {
             margin: 0;
@@ -21,7 +21,7 @@
         }
         
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
             background: white;
             border-radius: 20px;
@@ -51,102 +51,80 @@
             padding: 40px;
         }
         
-        .trip-info {
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section-header {
             background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-            padding: 25px;
+            padding: 20px;
             border-radius: 15px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-        
-        .trip-info h2 {
-            color: #e74c3c;
-            margin-bottom: 15px;
-            font-size: 1.8em;
-        }
-        
-        .trip-info p {
-            font-size: 1.1em;
-            margin-bottom: 10px;
-        }
-        
-        .itinerary {
-            margin-top: 30px;
-        }
-        
-        .itinerary h2 {
-            color: #3498db;
             margin-bottom: 20px;
+        }
+        
+        .section-header h2 {
+            color: #e74c3c;
             font-size: 2em;
-            border-bottom: 3px solid #3498db;
-            padding-bottom: 10px;
+            margin-bottom: 5px;
+        }
+        
+        .section-header .hotel {
+            color: #555;
+            font-size: 1.1em;
+            margin-top: 5px;
         }
         
         .day {
             background: #f8f9fa;
-            padding: 25px;
-            margin-bottom: 20px;
-            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 10px;
             border-left: 5px solid #e74c3c;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: all 0.3s ease;
         }
         
         .day:hover {
-            transform: translateX(10px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            transform: translateX(5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
         }
         
-        .day h3 {
+        .day-date {
             color: #e74c3c;
-            margin-bottom: 15px;
-            font-size: 1.5em;
+            font-weight: bold;
+            font-size: 1.3em;
+            margin-bottom: 10px;
         }
         
-        .day ul {
+        .day-activities {
             list-style: none;
             padding-left: 0;
         }
         
-        .day li {
-            padding: 8px 0;
+        .day-activities li {
+            padding: 5px 0;
             padding-left: 25px;
             position: relative;
         }
         
-        .day li:before {
-            content: "🗾";
+        .day-activities li:before {
+            content: "•";
             position: absolute;
-            left: 0;
+            left: 10px;
+            color: #e74c3c;
+            font-weight: bold;
         }
         
-        .tips {
+        .highlight {
             background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-            padding: 25px;
+            padding: 20px;
             border-radius: 15px;
-            margin-top: 30px;
+            margin-top: 20px;
+            border-left: 5px solid #e67e22;
         }
         
-        .tips h2 {
+        .highlight h3 {
             color: #e67e22;
-            margin-bottom: 15px;
-            font-size: 1.8em;
-        }
-        
-        .tips ul {
-            list-style: none;
-            padding-left: 0;
-        }
-        
-        .tips li {
-            padding: 10px 0;
-            padding-left: 30px;
-            position: relative;
-        }
-        
-        .tips li:before {
-            content: "✨";
-            position: absolute;
-            left: 0;
+            margin-bottom: 10px;
         }
         
         footer {
@@ -165,90 +143,242 @@
             .content {
                 padding: 20px;
             }
+            
+            .section-header h2 {
+                font-size: 1.5em;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>🇯🇵 Viagem ao Japão 🇯🇵</h1>
-            <p>Março 2026 - Rafael & Ariana</p>
+            <h1>ROTEIRO JAPÃO</h1>
+            <p>Março / Abril 2026</p>
+            <p>Rafael & Ariana</p>
         </header>
         
         <div class="content">
-            <div class="trip-info">
-                <h2>📅 Informações da Viagem</h2>
-                <p><strong>Data de Partida:</strong> 15 de Março de 2026</p>
-                <p><strong>Viajantes:</strong> Rafael e Ariana ❤️</p>
-                <p><strong>Duração:</strong> A definir</p>
-                <p><strong>Destinos principais:</strong> Tóquio, Kyoto, Osaka</p>
-            </div>
-            
-            <div class="itinerary">
-                <h2>🗺️ Roteiro</h2>
+            <!-- TOKYO INÍCIO -->
+            <div class="section">
+                <div class="section-header">
+                    <h2>TOKYO – INÍCIO</h2>
+                    <div class="hotel">Hotel: Sotetsu Fresa Inn Hamamatsucho-Daimon</div>
+                </div>
                 
                 <div class="day">
-                    <h3>Dia 1-3: Tóquio 🏙️</h3>
-                    <ul>
-                        <li>Visita ao Santuário Meiji e Parque Yoyogi</li>
-                        <li>Explorar Shibuya e Harajuku</li>
-                        <li>Shinjuku e observatório do Tokyo Metropolitan Government Building</li>
-                        <li>Asakusa e Templo Senso-ji</li>
-                        <li>Tokyo Skytree</li>
-                        <li>Akihabara (distrito eletrônico e anime)</li>
+                    <div class="day-date">16 MAR</div>
+                    <ul class="day-activities">
+                        <li>17:00 – Chegada / Check-in</li>
+                        <li>18:00 – Tokyo Tower</li>
+                        <li>Noite livre</li>
                     </ul>
                 </div>
                 
                 <div class="day">
-                    <h3>Dia 4-6: Kyoto ⛩️</h3>
-                    <ul>
-                        <li>Templo Kinkaku-ji (Pavilhão Dourado)</li>
-                        <li>Floresta de Bambu de Arashiyama</li>
-                        <li>Fushimi Inari (milhares de torii vermelhos)</li>
-                        <li>Distrito de Gion (gueixas)</li>
-                        <li>Templo Kiyomizu-dera</li>
-                        <li>Passeio pelo Caminho do Filósofo</li>
+                    <div class="day-date">17 MAR</div>
+                    <ul class="day-activities">
+                        <li>09:00 – Meiji / Harajuku</li>
+                        <li>15:00 – Shibuya</li>
+                        <li>19:00 – Shinjuku</li>
                     </ul>
                 </div>
                 
                 <div class="day">
-                    <h3>Dia 7-8: Osaka 🍜</h3>
-                    <ul>
-                        <li>Castelo de Osaka</li>
-                        <li>Dotonbori (comida de rua e néon)</li>
-                        <li>Distrito de Namba</li>
-                        <li>Universal Studios Japan (opcional)</li>
-                        <li>Sumiyoshi Taisha</li>
-                    </ul>
-                </div>
-                
-                <div class="day">
-                    <h3>Dia 9: Nara 🦌</h3>
-                    <ul>
-                        <li>Parque de Nara (cervos sagrados)</li>
-                        <li>Templo Todai-ji (Grande Buda)</li>
-                        <li>Santuário Kasuga Taisha</li>
+                    <div class="day-date">18 MAR</div>
+                    <ul class="day-activities">
+                        <li>Manhã – Tsukiji / Ginza</li>
+                        <li>Tarde – Aeroporto</li>
+                        <li>Voo para Hokkaido</li>
                     </ul>
                 </div>
             </div>
             
-            <div class="tips">
-                <h2>💡 Dicas Importantes</h2>
-                <ul>
-                    <li>Comprar JR Pass antes da viagem (economia em transporte)</li>
-                    <li>Baixar aplicativos: Google Maps, Hyperdia (trens), Google Translate</li>
-                    <li>Levar dinheiro em cash - muitos lugares não aceitam cartão</li>
-                    <li>Aprender frases básicas em japonês</li>
-                    <li>Respeitar regras locais: silêncio no transporte público, não comer andando</li>
-                    <li>Experimentar: ramen, sushi, okonomiyaki, takoyaki, matcha</li>
-                    <li>Visitar onsen (banho termal japonês)</li>
-                    <li>Comprar pocket wifi ou chip local</li>
-                </ul>
+            <!-- HOKKAIDO -->
+            <div class="section">
+                <div class="section-header">
+                    <h2>HOKKAIDO (SAPPORO)</h2>
+                    <div class="hotel">Hotel: Hotel Vista Sapporo Odori</div>
+                </div>
+                
+                <div class="day">
+                    <div class="day-date">19 MAR</div>
+                    <ul class="day-activities">
+                        <li>21:00 – Chegada</li>
+                        <li>23:00 – Hotel</li>
+                    </ul>
+                </div>
+                
+                <div class="day">
+                    <div class="day-date">20 MAR</div>
+                    <ul class="day-activities">
+                        <li>08:30 – Jozankei</li>
+                        <li>14:00 – Onsen privada</li>
+                        <li>18:00 – Retorno</li>
+                    </ul>
+                </div>
+                
+                <div class="day">
+                    <div class="day-date">21 MAR</div>
+                    <ul class="day-activities">
+                        <li>09:00 – Sapporo cidade</li>
+                        <li>16:30 – Mount Moiwa</li>
+                    </ul>
+                </div>
+                
+                <div class="day">
+                    <div class="day-date">22 MAR</div>
+                    <ul class="day-activities">
+                        <li>08:30 – Otaru</li>
+                        <li>17:00 – Retorno</li>
+                    </ul>
+                </div>
+                
+                <div class="day">
+                    <div class="day-date">23 MAR</div>
+                    <ul class="day-activities">
+                        <li>07:30 – Ski (Sapporo Kokusai)</li>
+                        <li>18:00 – Retorno</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- OSAKA -->
+            <div class="section">
+                <div class="section-header">
+                    <h2>OSAKA</h2>
+                    <div class="hotel">Hotel: (confirmar nome)</div>
+                </div>
+                
+                <div class="day">
+                    <div class="day-date">24 MAR</div>
+                    <ul class="day-activities">
+                        <li>Chegada / Dotonbori</li>
+                    </ul>
+                </div>
+                
+                <div class="day">
+                    <div class="day-date">25 MAR</div>
+                    <ul class="day-activities">
+                        <li>Nara</li>
+                    </ul>
+                </div>
+                
+                <div class="day">
+                    <div class="day-date">26 MAR</div>
+                    <ul class="day-activities">
+                        <li>Universal Studios ou dia livre</li>
+                    </ul>
+                </div>
+                
+                <div class="day">
+                    <div class="day-date">27 MAR</div>
+                    <ul class="day-activities">
+                        <li>Dia livre / Shinsekai / Kuromon</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- KYOTO -->
+            <div class="section">
+                <div class="section-header">
+                    <h2>KYOTO</h2>
+                    <div class="hotel">Hotel: (confirmar nome)</div>
+                </div>
+                
+                <div class="day">
+                    <div class="day-date">28 MAR</div>
+                    <ul class="day-activities">
+                        <li>Fushimi Inari / Higashiyama</li>
+                    </ul>
+                </div>
+                
+                <div class="day">
+                    <div class="day-date">29 MAR</div>
+                    <ul class="day-activities">
+                        <li>F1 Suzuka</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- TOKYO VOLTA -->
+            <div class="section">
+                <div class="section-header">
+                    <h2>TOKYO – VOLTA</h2>
+                    <div class="hotel">Hotel: (confirmar nome)</div>
+                </div>
+                
+                <div class="day">
+                    <div class="day-date">30 MAR</div>
+                    <ul class="day-activities">
+                        <li>Chegada / Shinjuku</li>
+                    </ul>
+                </div>
+                
+                <div class="day">
+                    <div class="day-date">31 MAR</div>
+                    <ul class="day-activities">
+                        <li>Disneyland</li>
+                    </ul>
+                </div>
+                
+                <div class="day">
+                    <div class="day-date">01 ABR</div>
+                    <ul class="day-activities">
+                        <li>Dia livre</li>
+                    </ul>
+                </div>
+                
+                <div class="day">
+                    <div class="day-date">02 ABR</div>
+                    <ul class="day-activities">
+                        <li>Fuji-Q</li>
+                    </ul>
+                </div>
+                
+                <div class="day">
+                    <div class="day-date">03 ABR</div>
+                    <ul class="day-activities">
+                        <li>Ghibli Park (15:00) – Em decisão</li>
+                    </ul>
+                </div>
+                
+                <div class="day">
+                    <div class="day-date">04 ABR</div>
+                    <ul class="day-activities">
+                        <li>Asakusa / Skytree</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- F1 FINAL -->
+            <div class="section">
+                <div class="section-header">
+                    <h2>F1 FINAL</h2>
+                </div>
+                
+                <div class="day">
+                    <div class="day-date">05–06 ABR</div>
+                    <ul class="day-activities">
+                        <li>Deslocamentos / Programação F1</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- EXTRA -->
+            <div class="highlight">
+                <h3>EXTRA</h3>
+                <div class="day">
+                    <div class="day-date">11 ABR</div>
+                    <ul class="day-activities">
+                        <li>DisneySea</li>
+                    </ul>
+                </div>
             </div>
         </div>
         
         <footer>
-            <p>Criado com ❤️ para nossa aventura japonesa</p>
+            <p>Criado com amor para nossa aventura japonesa</p>
             <p>Rafael & Ariana - 2026</p>
         </footer>
     </div>
