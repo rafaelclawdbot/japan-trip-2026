@@ -118,17 +118,6 @@
             color: #555;
         }
         
-        .hotel-info a {
-            color: #3498db;
-            text-decoration: none;
-            border-bottom: 1px dashed #3498db;
-        }
-        
-        .hotel-info a:hover {
-            color: #2980b9;
-            border-bottom: 1px solid #2980b9;
-        }
-        
         .day {
             background: #f8f9fa;
             padding: 20px;
@@ -156,9 +145,12 @@
         }
         
         .day-activities li {
-            padding: 5px 0;
+            padding: 8px 0;
             padding-left: 25px;
             position: relative;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
         
         .day-activities li:before {
@@ -169,24 +161,35 @@
             font-weight: bold;
         }
         
-        .day-activities a {
+        .activity-text {
+            color: #333;
+        }
+        
+        .icon-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 3px;
+            margin-left: 5px;
+        }
+        
+        .icon-link a {
             color: #3498db;
             text-decoration: none;
-            border-bottom: 1px dashed #3498db;
+            font-size: 1.2em;
+            transition: transform 0.2s;
         }
         
-        .day-activities a:hover {
+        .icon-link a:hover {
+            transform: scale(1.3);
             color: #2980b9;
-            border-bottom: 1px solid #2980b9;
         }
         
-        .alert {
-            background: #fff3cd;
-            border-left: 4px solid #ffc107;
-            padding: 15px;
-            border-radius: 10px;
-            margin: 20px 0;
-            color: #856404;
+        .map-icon {
+            color: #e74c3c;
+        }
+        
+        .ticket-icon {
+            color: #27ae60;
         }
         
         .summary {
@@ -288,10 +291,6 @@
                     <h3>Sotetsu Fresa Inn Hamamatsucho-Daimon</h3>
                     <div class="hotel-details">
                         <div class="detail-item">
-                            <span class="detail-label">Endereço:</span>
-                            <span class="detail-value"><a href="https://www.google.com/maps/search/?api=1&query=Sotetsu+Fresa+Inn+Hamamatsucho+Tokyo" target="_blank">Hamamatsucho-Daimon, Tóquio</a></span>
-                        </div>
-                        <div class="detail-item">
                             <span class="detail-label">Check-in:</span>
                             <span class="detail-value">16 de março (domingo) - por volta das 17:00</span>
                         </div>
@@ -309,30 +308,70 @@
                 <div class="day">
                     <div class="day-date">16 de Março (Domingo)</div>
                     <ul class="day-activities">
-                        <li>17:00 – Chegada em Tokyo</li>
-                        <li>Check-in no hotel</li>
-                        <li><a href="https://www.google.com/maps/search/?api=1&query=Tokyo+Tower" target="_blank">Tokyo Tower</a></li>
-                        <li><a href="https://www.google.com/maps/search/?api=1&query=Zojoji+Temple+Tokyo" target="_blank">Templo Zojoji</a></li>
-                        <li>Jantar na região</li>
+                        <li><span class="activity-text">17:00 – Chegada em Tokyo</span></li>
+                        <li><span class="activity-text">Check-in no hotel</span></li>
+                        <li>
+                            <span class="activity-text">Tokyo Tower</span>
+                            <span class="icon-link">
+                                <a href="https://www.google.com/maps/search/?api=1&query=Tokyo+Tower" target="_blank" title="Ver no Google Maps" class="map-icon">📍</a>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="activity-text">Templo Zojoji</span>
+                            <span class="icon-link">
+                                <a href="https://www.google.com/maps/search/?api=1&query=Zojoji+Temple+Tokyo" target="_blank" title="Ver no Google Maps" class="map-icon">📍</a>
+                            </span>
+                        </li>
+                        <li><span class="activity-text">Jantar na região</span></li>
                     </ul>
                 </div>
                 
                 <div class="day">
                     <div class="day-date">17 de Março (Segunda)</div>
                     <ul class="day-activities">
-                        <li><a href="https://www.google.com/maps/search/?api=1&query=Meiji+Shrine+Tokyo" target="_blank">Meiji Shrine</a></li>
-                        <li><a href="https://www.google.com/maps/search/?api=1&query=Harajuku+Tokyo" target="_blank">Harajuku</a></li>
-                        <li><a href="https://www.google.com/maps/search/?api=1&query=Shibuya+Crossing+Tokyo" target="_blank">Shibuya</a></li>
-                        <li><a href="https://www.google.com/maps/search/?api=1&query=Shinjuku+Tokyo" target="_blank">Shinjuku</a> à noite</li>
+                        <li>
+                            <span class="activity-text">Meiji Shrine</span>
+                            <span class="icon-link">
+                                <a href="https://www.google.com/maps/search/?api=1&query=Meiji+Shrine+Tokyo" target="_blank" title="Ver no Google Maps" class="map-icon">📍</a>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="activity-text">Harajuku</span>
+                            <span class="icon-link">
+                                <a href="https://www.google.com/maps/search/?api=1&query=Harajuku+Tokyo" target="_blank" title="Ver no Google Maps" class="map-icon">📍</a>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="activity-text">Shibuya</span>
+                            <span class="icon-link">
+                                <a href="https://www.google.com/maps/search/?api=1&query=Shibuya+Crossing+Tokyo" target="_blank" title="Ver no Google Maps" class="map-icon">📍</a>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="activity-text">Shinjuku à noite</span>
+                            <span class="icon-link">
+                                <a href="https://www.google.com/maps/search/?api=1&query=Shinjuku+Tokyo" target="_blank" title="Ver no Google Maps" class="map-icon">📍</a>
+                            </span>
+                        </li>
                     </ul>
                 </div>
                 
                 <div class="day">
                     <div class="day-date">18 de Março (Terça)</div>
                     <ul class="day-activities">
-                        <li><a href="https://www.google.com/maps/search/?api=1&query=Tsukiji+Outer+Market+Tokyo" target="_blank">Tsukiji Outer Market</a></li>
-                        <li><a href="https://www.google.com/maps/search/?api=1&query=Ginza+Tokyo" target="_blank">Ginza</a></li>
-                        <li>Voo para Hokkaido</li>
+                        <li>
+                            <span class="activity-text">Tsukiji Outer Market</span>
+                            <span class="icon-link">
+                                <a href="https://www.google.com/maps/search/?api=1&query=Tsukiji+Outer+Market+Tokyo" target="_blank" title="Ver no Google Maps" class="map-icon">📍</a>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="activity-text">Ginza</span>
+                            <span class="icon-link">
+                                <a href="https://www.google.com/maps/search/?api=1&query=Ginza+Tokyo" target="_blank" title="Ver no Google Maps" class="map-icon">📍</a>
+                            </span>
+                        </li>
+                        <li><span class="activity-text">Voo para Hokkaido</span></li>
                     </ul>
                 </div>
             </div>
@@ -364,40 +403,70 @@
                 <div class="day">
                     <div class="day-date">19 de Março (Quarta)</div>
                     <ul class="day-activities">
-                        <li>21:00 – Chegada em Sapporo</li>
-                        <li>Check-in no hotel</li>
+                        <li><span class="activity-text">21:00 – Chegada em Sapporo</span></li>
+                        <li><span class="activity-text">Check-in no hotel</span></li>
                     </ul>
                 </div>
                 
                 <div class="day">
                     <div class="day-date">20 de Março (Quinta)</div>
                     <ul class="day-activities">
-                        <li><a href="https://www.google.com/maps/search/?api=1&query=Jozankei+Onsen+Hokkaido" target="_blank">Jozankei Onsen</a></li>
-                        <li>Onsen privada externa (Rotenburo)</li>
+                        <li>
+                            <span class="activity-text">Jozankei Onsen</span>
+                            <span class="icon-link">
+                                <a href="https://www.google.com/maps/search/?api=1&query=Jozankei+Onsen+Hokkaido" target="_blank" title="Ver no Google Maps" class="map-icon">📍</a>
+                            </span>
+                        </li>
+                        <li><span class="activity-text">Onsen privada externa (Rotenburo)</span></li>
                     </ul>
                 </div>
                 
                 <div class="day">
                     <div class="day-date">21 de Março (Sexta)</div>
                     <ul class="day-activities">
-                        <li><a href="https://www.google.com/maps/search/?api=1&query=Odori+Park+Sapporo" target="_blank">Odori Park</a></li>
-                        <li><a href="https://www.google.com/maps/search/?api=1&query=Sapporo+Clock+Tower" target="_blank">Sapporo Clock Tower</a></li>
-                        <li><a href="https://www.google.com/maps/search/?api=1&query=Mount+Moiwa+Sapporo" target="_blank">Mount Moiwa</a> (pôr do sol)</li>
+                        <li>
+                            <span class="activity-text">Odori Park</span>
+                            <span class="icon-link">
+                                <a href="https://www.google.com/maps/search/?api=1&query=Odori+Park+Sapporo" target="_blank" title="Ver no Google Maps" class="map-icon">📍</a>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="activity-text">Sapporo Clock Tower</span>
+                            <span class="icon-link">
+                                <a href="https://www.google.com/maps/search/?api=1&query=Sapporo+Clock+Tower" target="_blank" title="Ver no Google Maps" class="map-icon">📍</a>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="activity-text">Mount Moiwa (pôr do sol)</span>
+                            <span class="icon-link">
+                                <a href="https://www.google.com/maps/search/?api=1&query=Mount+Moiwa+Sapporo" target="_blank" title="Ver no Google Maps" class="map-icon">📍</a>
+                            </span>
+                        </li>
                     </ul>
                 </div>
                 
                 <div class="day">
                     <div class="day-date">22 de Março (Sábado)</div>
                     <ul class="day-activities">
-                        <li><a href="https://www.google.com/maps/search/?api=1&query=Otaru+Canal+Hokkaido" target="_blank">Otaru</a> (bate-volta)</li>
+                        <li>
+                            <span class="activity-text">Otaru (bate-volta)</span>
+                            <span class="icon-link">
+                                <a href="https://www.google.com/maps/search/?api=1&query=Otaru+Canal+Hokkaido" target="_blank" title="Ver no Google Maps" class="map-icon">📍</a>
+                            </span>
+                        </li>
                     </ul>
                 </div>
                 
                 <div class="day">
                     <div class="day-date">23 de Março (Domingo)</div>
                     <ul class="day-activities">
-                        <li><a href="https://www.google.com/maps/search/?api=1&query=Sapporo+Kokusai+Ski+Resort" target="_blank">Sapporo Kokusai Ski Resort</a></li>
-                        <li>Check-out do hotel</li>
+                        <li>
+                            <span class="activity-text">Sapporo Kokusai Ski Resort</span>
+                            <span class="icon-link">
+                                <a href="https://www.google.com/maps/search/?api=1&query=Sapporo+Kokusai+Ski+Resort" target="_blank" title="Ver no Google Maps" class="map-icon">📍</a>
+                            </span>
+                        </li>
+                        <li><span class="activity-text">Check-out do hotel</span></li>
                     </ul>
                 </div>
             </div>
@@ -411,10 +480,6 @@
                 <div class="hotel-info">
                     <h3>Arrow Hotel in ShinsaiBashi</h3>
                     <div class="hotel-details">
-                        <div class="detail-item">
-                            <span class="detail-label">Endereço:</span>
-                            <span class="detail-value"><a href="https://www.google.com/maps/search/?api=1&query=Arrow+Hotel+Shinsaibashi+Osaka" target="_blank">Chuo-ku Nishi Shinsaibashi 2-9-32, Osaka 542-0086</a></span>
-                        </div>
                         <div class="detail-item">
                             <span class="detail-label">Check-in:</span>
                             <span class="detail-value">23 de março (domingo) - a partir das 12:30</span>
@@ -436,10 +501,6 @@
                             <span class="detail-value">+81 6 6211 8441</span>
                         </div>
                         <div class="detail-item">
-                            <span class="detail-label">Quarto:</span>
-                            <span class="detail-value">Duplo Standard (1 cama de casal)</span>
-                        </div>
-                        <div class="detail-item">
                             <span class="detail-label">Café da Manhã:</span>
                             <span class="detail-value">✓ Incluído</span>
                         </div>
@@ -457,30 +518,56 @@
                 <div class="day">
                     <div class="day-date">24 de Março (Segunda)</div>
                     <ul class="day-activities">
-                        <li>Chegada em Osaka</li>
-                        <li><a href="https://www.google.com/maps/search/?api=1&query=Dotonbori+Osaka" target="_blank">Dotonbori</a></li>
+                        <li><span class="activity-text">Chegada em Osaka</span></li>
+                        <li>
+                            <span class="activity-text">Dotonbori</span>
+                            <span class="icon-link">
+                                <a href="https://www.google.com/maps/search/?api=1&query=Dotonbori+Osaka" target="_blank" title="Ver no Google Maps" class="map-icon">📍</a>
+                            </span>
+                        </li>
                     </ul>
                 </div>
                 
                 <div class="day">
                     <div class="day-date">25 de Março (Terça)</div>
                     <ul class="day-activities">
-                        <li><a href="https://www.google.com/maps/search/?api=1&query=Nara+Park+Japan" target="_blank">Nara</a></li>
+                        <li>
+                            <span class="activity-text">Nara</span>
+                            <span class="icon-link">
+                                <a href="https://www.google.com/maps/search/?api=1&query=Nara+Park+Japan" target="_blank" title="Ver no Google Maps" class="map-icon">📍</a>
+                            </span>
+                        </li>
                     </ul>
                 </div>
                 
                 <div class="day">
                     <div class="day-date">26 de Março (Quarta)</div>
                     <ul class="day-activities">
-                        <li><a href="https://www.google.com/maps/search/?api=1&query=Universal+Studios+Japan+Osaka" target="_blank">Universal Studios Japan</a></li>
+                        <li>
+                            <span class="activity-text">Universal Studios Japan</span>
+                            <span class="icon-link">
+                                <a href="https://www.google.com/maps/search/?api=1&query=Universal+Studios+Japan+Osaka" target="_blank" title="Ver no Google Maps" class="map-icon">📍</a>
+                                <a href="https://drive.google.com/drive/folders/1e9rUUcJbOrBaChLhrDScyegUUVCu4d8Q?usp=sharing" target="_blank" title="Ver voucher/QR code" class="ticket-icon">🎟️</a>
+                            </span>
+                        </li>
                     </ul>
                 </div>
                 
                 <div class="day">
                     <div class="day-date">27 de Março (Quinta)</div>
                     <ul class="day-activities">
-                        <li><a href="https://www.google.com/maps/search/?api=1&query=Shinsekai+Osaka" target="_blank">Shinsekai</a></li>
-                        <li><a href="https://www.google.com/maps/search/?api=1&query=Kuromon+Market+Osaka" target="_blank">Kuromon Market</a></li>
+                        <li>
+                            <span class="activity-text">Shinsekai</span>
+                            <span class="icon-link">
+                                <a href="https://www.google.com/maps/search/?api=1&query=Shinsekai+Osaka" target="_blank" title="Ver no Google Maps" class="map-icon">📍</a>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="activity-text">Kuromon Market</span>
+                            <span class="icon-link">
+                                <a href="https://www.google.com/maps/search/?api=1&query=Kuromon+Market+Osaka" target="_blank" title="Ver no Google Maps" class="map-icon">📍</a>
+                            </span>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -514,39 +601,37 @@
                             <span class="detail-label">WiFi:</span>
                             <span class="detail-value">✓ Gratuito</span>
                         </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Aviso:</span>
-                            <span class="detail-value">Imposto de acomodação pago no local</span>
-                        </div>
                     </div>
                 </div>
                 
                 <div class="day">
                     <div class="day-date">28 de Março (Sexta)</div>
                     <ul class="day-activities">
-                        <li><a href="https://www.google.com/maps/search/?api=1&query=Fushimi+Inari+Shrine+Kyoto" target="_blank">Fushimi Inari</a> (milhares de torii vermelhos)</li>
-                        <li><a href="https://www.google.com/maps/search/?api=1&query=Higashiyama+District+Kyoto" target="_blank">Higashiyama</a> (distrito histórico)</li>
+                        <li>
+                            <span class="activity-text">Fushimi Inari (milhares de torii vermelhos)</span>
+                            <span class="icon-link">
+                                <a href="https://www.google.com/maps/search/?api=1&query=Fushimi+Inari+Shrine+Kyoto" target="_blank" title="Ver no Google Maps" class="map-icon">📍</a>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="activity-text">Higashiyama (distrito histórico)</span>
+                            <span class="icon-link">
+                                <a href="https://www.google.com/maps/search/?api=1&query=Higashiyama+District+Kyoto" target="_blank" title="Ver no Google Maps" class="map-icon">📍</a>
+                            </span>
+                        </li>
                     </ul>
                 </div>
                 
                 <div class="day">
                     <div class="day-date">29 de Março (Sábado)</div>
                     <ul class="day-activities">
-                        <li><a href="https://www.google.com/maps/search/?api=1&query=Suzuka+Circuit+Japan" target="_blank">F1 Suzuka</a> (Grande Prêmio do Japão)</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- F1 FINAL -->
-            <div class="section">
-                <div class="section-header">
-                    <h2>F1 Final (5-6 de abril)</h2>
-                </div>
-                
-                <div class="day">
-                    <div class="day-date">5-6 de Abril (Sábado-Domingo)</div>
-                    <ul class="day-activities">
-                        <li>Retorno/Finalizações relacionadas à Fórmula 1</li>
+                        <li>
+                            <span class="activity-text">F1 Suzuka (Grande Prêmio do Japão)</span>
+                            <span class="icon-link">
+                                <a href="https://www.google.com/maps/search/?api=1&query=Suzuka+Circuit+Japan" target="_blank" title="Ver no Google Maps" class="map-icon">📍</a>
+                                <a href="https://drive.google.com/drive/folders/1e9rUUcJbOrBaChLhrDScyegUUVCu4d8Q?usp=sharing" target="_blank" title="Ver voucher/QR code" class="ticket-icon">🎟️</a>
+                            </span>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -560,10 +645,6 @@
                 <div class="hotel-info">
                     <h3>The Aoca Tokyo Kaminoge</h3>
                     <div class="hotel-details">
-                        <div class="detail-item">
-                            <span class="detail-label">Endereço:</span>
-                            <span class="detail-value"><a href="https://www.google.com/maps/search/?api=1&query=The+Aoca+Tokyo+Kaminoge" target="_blank">3 Chome-14-13 Kaminoge, Setagaya-ku, Tokyo 158-0093</a></span>
-                        </div>
                         <div class="detail-item">
                             <span class="detail-label">Check-in:</span>
                             <span class="detail-value">30 de março (domingo) - a partir das 15:00</span>
@@ -585,10 +666,6 @@
                             <span class="detail-value">Apartamento independente com cozinha completa</span>
                         </div>
                         <div class="detail-item">
-                            <span class="detail-label">Facilidades:</span>
-                            <span class="detail-value">Cozinha, máquina de lavar, sofá, mesa de jantar, micro-ondas, geladeira, WiFi</span>
-                        </div>
-                        <div class="detail-item">
                             <span class="detail-label">Telefone:</span>
                             <span class="detail-value">+81 70 1560 5202</span>
                         </div>
@@ -596,55 +673,84 @@
                             <span class="detail-label">Preço:</span>
                             <span class="detail-value">R$ 4.865 (¥145.584)</span>
                         </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Proximidades:</span>
-                            <span class="detail-value"><a href="https://www.google.com/maps/search/?api=1&query=Gotoh+Museum+Tokyo" target="_blank">Museu Gotoh</a>, Estação Kaminoge</span>
-                        </div>
                     </div>
                 </div>
                 
                 <div class="day">
                     <div class="day-date">30 de Março (Domingo)</div>
                     <ul class="day-activities">
-                        <li>Chegada em Tokyo</li>
-                        <li><a href="https://www.google.com/maps/search/?api=1&query=Shinjuku+Tokyo" target="_blank">Shinjuku</a></li>
+                        <li><span class="activity-text">Chegada em Tokyo</span></li>
+                        <li>
+                            <span class="activity-text">Shinjuku</span>
+                            <span class="icon-link">
+                                <a href="https://www.google.com/maps/search/?api=1&query=Shinjuku+Tokyo" target="_blank" title="Ver no Google Maps" class="map-icon">📍</a>
+                            </span>
+                        </li>
                     </ul>
                 </div>
                 
                 <div class="day">
                     <div class="day-date">31 de Março (Segunda)</div>
                     <ul class="day-activities">
-                        <li><a href="https://www.google.com/maps/search/?api=1&query=Tokyo+Disneyland" target="_blank">Tokyo Disneyland</a></li>
+                        <li>
+                            <span class="activity-text">Tokyo Disneyland</span>
+                            <span class="icon-link">
+                                <a href="https://www.google.com/maps/search/?api=1&query=Tokyo+Disneyland" target="_blank" title="Ver no Google Maps" class="map-icon">📍</a>
+                                <a href="https://drive.google.com/drive/folders/1e9rUUcJbOrBaChLhrDScyegUUVCu4d8Q?usp=sharing" target="_blank" title="Ver voucher/QR code" class="ticket-icon">🎟️</a>
+                            </span>
+                        </li>
                     </ul>
                 </div>
                 
                 <div class="day">
                     <div class="day-date">1 de Abril (Terça)</div>
                     <ul class="day-activities">
-                        <li>Dia livre</li>
+                        <li><span class="activity-text">Dia livre</span></li>
                     </ul>
                 </div>
                 
                 <div class="day">
                     <div class="day-date">2 de Abril (Quarta)</div>
                     <ul class="day-activities">
-                        <li><a href="https://www.google.com/maps/search/?api=1&query=Fuji-Q+Highland" target="_blank">Fuji-Q Highland</a></li>
+                        <li>
+                            <span class="activity-text">Fuji-Q Highland</span>
+                            <span class="icon-link">
+                                <a href="https://www.google.com/maps/search/?api=1&query=Fuji-Q+Highland" target="_blank" title="Ver no Google Maps" class="map-icon">📍</a>
+                                <a href="https://drive.google.com/drive/folders/1e9rUUcJbOrBaChLhrDScyegUUVCu4d8Q?usp=sharing" target="_blank" title="Ver voucher/QR code" class="ticket-icon">🎟️</a>
+                            </span>
+                        </li>
                     </ul>
                 </div>
                 
                 <div class="day">
                     <div class="day-date">3 de Abril (Quinta)</div>
                     <ul class="day-activities">
-                        <li><a href="https://www.google.com/maps/search/?api=1&query=Ghibli+Park+Japan" target="_blank">Ghibli Park</a> às 15:00 (em decisão)</li>
+                        <li>
+                            <span class="activity-text">Ghibli Park às 15:00 (em decisão)</span>
+                            <span class="icon-link">
+                                <a href="https://www.google.com/maps/search/?api=1&query=Ghibli+Park+Japan" target="_blank" title="Ver no Google Maps" class="map-icon">📍</a>
+                                <a href="https://drive.google.com/drive/folders/1e9rUUcJbOrBaChLhrDScyegUUVCu4d8Q?usp=sharing" target="_blank" title="Ver voucher/QR code" class="ticket-icon">🎟️</a>
+                            </span>
+                        </li>
                     </ul>
                 </div>
                 
                 <div class="day">
                     <div class="day-date">4 de Abril (Sexta)</div>
                     <ul class="day-activities">
-                        <li><a href="https://www.google.com/maps/search/?api=1&query=Asakusa+Tokyo" target="_blank">Asakusa</a></li>
-                        <li><a href="https://www.google.com/maps/search/?api=1&query=Tokyo+Skytree" target="_blank">Tokyo Skytree</a></li>
-                        <li>Check-out do hotel</li>
+                        <li>
+                            <span class="activity-text">Asakusa</span>
+                            <span class="icon-link">
+                                <a href="https://www.google.com/maps/search/?api=1&query=Asakusa+Tokyo" target="_blank" title="Ver no Google Maps" class="map-icon">📍</a>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="activity-text">Tokyo Skytree</span>
+                            <span class="icon-link">
+                                <a href="https://www.google.com/maps/search/?api=1&query=Tokyo+Skytree" target="_blank" title="Ver no Google Maps" class="map-icon">📍</a>
+                            </span>
+                        </li>
+                        <li><span class="activity-text">Check-out do hotel</span></li>
                     </ul>
                 </div>
             </div>
@@ -658,7 +764,13 @@
                 <div class="day">
                     <div class="day-date">11 de Abril (Sexta)</div>
                     <ul class="day-activities">
-                        <li><a href="https://www.google.com/maps/search/?api=1&query=Tokyo+DisneySea" target="_blank">Tokyo DisneySea</a></li>
+                        <li>
+                            <span class="activity-text">Tokyo DisneySea</span>
+                            <span class="icon-link">
+                                <a href="https://www.google.com/maps/search/?api=1&query=Tokyo+DisneySea" target="_blank" title="Ver no Google Maps" class="map-icon">📍</a>
+                                <a href="https://drive.google.com/drive/folders/1e9rUUcJbOrBaChLhrDScyegUUVCu4d8Q?usp=sharing" target="_blank" title="Ver voucher/QR code" class="ticket-icon">🎟️</a>
+                            </span>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -671,8 +783,6 @@
                         <tr>
                             <th>Hotel</th>
                             <th>Cidade</th>
-                            <th>Data Check-in</th>
-                            <th>Data Check-out</th>
                             <th>Noites</th>
                             <th>Preço (R$)</th>
                             <th>Preço (¥)</th>
@@ -682,8 +792,6 @@
                         <tr>
                             <td>Sotetsu Fresa Inn</td>
                             <td>Tokyo</td>
-                            <td>16 mar</td>
-                            <td>18 mar</td>
                             <td>2</td>
                             <td>-</td>
                             <td>-</td>
@@ -691,8 +799,6 @@
                         <tr>
                             <td>Hotel Vista Sapporo</td>
                             <td>Hokkaido</td>
-                            <td>19 mar</td>
-                            <td>23 mar</td>
                             <td>4</td>
                             <td>-</td>
                             <td>-</td>
@@ -700,8 +806,6 @@
                         <tr>
                             <td>Arrow Hotel ShinsaiBashi</td>
                             <td>Osaka</td>
-                            <td>23 mar</td>
-                            <td>27 mar</td>
                             <td>4</td>
                             <td>R$ 1.329</td>
                             <td>¥39.060</td>
@@ -709,8 +813,6 @@
                         <tr>
                             <td>M's Hotel Sanjo Wakoku</td>
                             <td>Kyoto</td>
-                            <td>27 mar</td>
-                            <td>29 mar</td>
                             <td>2</td>
                             <td>-</td>
                             <td>-</td>
@@ -718,14 +820,12 @@
                         <tr>
                             <td>The Aoca Tokyo Kaminoge</td>
                             <td>Tokyo</td>
-                            <td>30 mar</td>
-                            <td>4 abr</td>
                             <td>5</td>
                             <td>R$ 4.865</td>
                             <td>¥145.584</td>
                         </tr>
                         <tr class="total-row">
-                            <td colspan="4"><strong>TOTAL (parcial - informações confirmadas)</strong></td>
+                            <td colspan="2"><strong>TOTAL (parcial - informações confirmadas)</strong></td>
                             <td><strong>17 noites</strong></td>
                             <td><strong>R$ 6.194*</strong></td>
                             <td><strong>¥184.644*</strong></td>
