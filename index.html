@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Japan Trip 2026 - Roteiro Completo</title>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>
         * {
             margin: 0;
@@ -46,219 +47,204 @@
             font-size: 1.2em;
             opacity: 0.95;
         }
+
+        .tabs-container {
+            display: flex;
+            border-bottom: 2px solid #ddd;
+            background: #f8f9fa;
+            overflow-x: auto;
+        }
+
+        .tab-button {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 0.95em;
+            font-weight: 500;
+            color: #666;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+            margin-bottom: -2px;
+        }
+
+        .tab-button:hover {
+            background: #efefef;
+            color: #333;
+        }
+
+        .tab-button.active {
+            color: #f5576c;
+            border-bottom-color: #f5576c;
+        }
         
         .content {
             padding: 40px;
+            max-height: 65vh;
+            overflow-y: auto;
         }
-        
-        .trip-info {
-            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-            padding: 20px;
-            border-radius: 15px;
-            margin-bottom: 30px;
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.3s ease;
         }
-        
-        .trip-info h2 {
-            color: #e74c3c;
-            margin-bottom: 15px;
-            font-size: 1.8em;
+
+        .tab-content.active {
+            display: block;
         }
-        
-        .trip-info p {
-            font-size: 1.1em;
-            margin-bottom: 8px;
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
-        
-        .section {
-            margin-bottom: 40px;
-        }
-        
-        .section-header {
-            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-            padding: 20px;
-            border-radius: 15px;
-            margin-bottom: 20px;
-        }
-        
-        .section-header h2 {
-            color: #e74c3c;
+
+        /* Markdown Styling */
+        .tab-content h1 {
             font-size: 2em;
-            margin-bottom: 10px;
-        }
-        
-        .hotel-info {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 10px;
-            margin-bottom: 15px;
-            border-left: 4px solid #3498db;
-        }
-        
-        .hotel-info h3 {
-            color: #2c3e50;
-            margin-bottom: 10px;
-            font-size: 1.2em;
-        }
-        
-        .hotel-details {
-            font-size: 0.95em;
-            margin-top: 10px;
-        }
-        
-        .detail-item {
-            padding: 5px 0;
-        }
-        
-        .detail-label {
-            font-weight: bold;
-            color: #2c3e50;
-        }
-        
-        .detail-value {
-            color: #555;
-        }
-        
-        .day {
-            background: #f8f9fa;
-            padding: 20px;
-            margin-bottom: 15px;
-            border-radius: 10px;
-            border-left: 5px solid #e74c3c;
-            transition: all 0.3s ease;
-        }
-        
-        .day:hover {
-            transform: translateX(5px);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        }
-        
-        .day-date {
-            color: #e74c3c;
-            font-weight: bold;
-            font-size: 1.3em;
-            margin-bottom: 10px;
-        }
-        
-        .day-activities {
-            list-style: none;
-            padding-left: 0;
-        }
-        
-        .day-activities li {
-            padding: 8px 0;
-            padding-left: 25px;
-            position: relative;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .day-activities li:before {
-            content: "•";
-            position: absolute;
-            left: 10px;
-            color: #e74c3c;
-            font-weight: bold;
-        }
-        
-        .activity-text {
+            margin: 20px 0 15px 0;
             color: #333;
         }
-        
-        .icon-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 3px;
-            margin-left: 5px;
+
+        .tab-content h2 {
+            font-size: 1.5em;
+            margin: 25px 0 12px 0;
+            color: #f5576c;
+            border-left: 4px solid #f5576c;
+            padding-left: 12px;
         }
-        
-        .icon-link a {
-            color: #3498db;
-            text-decoration: none;
+
+        .tab-content h3 {
             font-size: 1.2em;
-            transition: transform 0.2s;
+            margin: 18px 0 10px 0;
+            color: #555;
         }
-        
-        .icon-link a:hover {
-            transform: scale(1.3);
-            color: #2980b9;
+
+        .tab-content p {
+            line-height: 1.7;
+            margin-bottom: 12px;
+            color: #555;
         }
-        
-        .map-icon {
-            color: #e74c3c;
+
+        .tab-content strong {
+            color: #333;
+            font-weight: 600;
         }
-        
-        .ticket-icon {
-            color: #27ae60;
+
+        .tab-content a {
+            color: #f5576c;
+            text-decoration: none;
         }
-        
-        .summary {
-            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-            padding: 25px;
-            border-radius: 15px;
-            margin-top: 30px;
-            border-left: 5px solid #e67e22;
+
+        .tab-content a:hover {
+            text-decoration: underline;
         }
-        
-        .summary h3 {
-            color: #e67e22;
-            margin-bottom: 15px;
-            font-size: 1.3em;
+
+        .tab-content ul, .tab-content ol {
+            margin: 15px 0 15px 30px;
+            line-height: 1.8;
         }
-        
-        table {
+
+        .tab-content li {
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        .tab-content table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 10px;
+            margin: 20px 0;
+            font-size: 0.95em;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
-        
-        th {
-            background: #f0f0f0;
+
+        .tab-content th {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
             padding: 12px;
             text-align: left;
-            border-bottom: 2px solid #e67e22;
-            font-weight: bold;
-            color: #2c3e50;
+            font-weight: 600;
         }
-        
-        td {
-            padding: 10px 12px;
+
+        .tab-content td {
+            padding: 12px;
             border-bottom: 1px solid #ddd;
         }
-        
-        tr:hover {
-            background: #f9f9f9;
+
+        .tab-content tr:hover {
+            background: #f8f9fa;
         }
-        
-        .total-row {
-            font-weight: bold;
-            background: #fff3cd;
-            border-top: 2px solid #e67e22;
+
+        .tab-content blockquote {
+            border-left: 4px solid #f5576c;
+            padding: 12px 16px;
+            margin: 15px 0;
+            background: #fff5f7;
+            color: #555;
         }
-        
-        footer {
-            background: #2c3e50;
-            color: white;
+
+        .tab-content code {
+            background: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            color: #d63384;
+        }
+
+        .tab-content pre {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 16px;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 15px 0;
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+
+        .tab-content pre code {
+            background: none;
+            color: inherit;
+            padding: 0;
+        }
+
+        .loading {
             text-align: center;
-            padding: 20px;
-            margin-top: 40px;
+            padding: 40px;
+            color: #999;
         }
-        
+
+        .error {
+            background: #ffe6e6;
+            color: #c00;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+
+        footer {
+            background: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+            border-top: 1px solid #ddd;
+        }
+
         @media (max-width: 768px) {
             header h1 {
                 font-size: 1.8em;
             }
-            
+
+            .tab-button {
+                padding: 12px 15px;
+                font-size: 0.85em;
+            }
+
             .content {
                 padding: 20px;
-            }
-            
-            .section-header h2 {
-                font-size: 1.5em;
-            }
-            
-            table {
-                font-size: 0.9em;
+                max-height: 60vh;
             }
         }
     </style>
@@ -266,580 +252,117 @@
 <body>
     <div class="container">
         <header>
-            <h1>JAPAN TRIP 2026</h1>
-            <p>16 de Março - 11 de Abril</p>
-            <p>Rafael & Ariana</p>
+            <h1>🇯🇵 JAPAN TRIP 2026</h1>
+            <p>15 de Março - 11 de Abril de 2026 (26 dias)</p>
+            <p><strong>Rafael & Ariana</strong></p>
         </header>
-        
-        <div class="content">
-            <!-- TRIP INFO -->
-            <div class="trip-info">
-                <h2>Visão Geral da Viagem</h2>
-                <p><strong>Período:</strong> 16 de Março - 11 de Abril de 2026 (26 dias)</p>
-                <p><strong>Viajantes:</strong> Rafael & Ariana</p>
-                <p><strong>Rota:</strong> Tóquio → Hokkaido (Sapporo) → Osaka → Kyoto → Tóquio</p>
-                <p><strong>Principais Atividades:</strong> Turismo cultural, Ski, F1 Suzuka, Parques temáticos, Onsen, Templos</p>
-            </div>
-            
-            <!-- TOKYO PARTE 1 -->
-            <div class="section">
-                <div class="section-header">
-                    <h2>TÓQUIO – Parte 1 (16-18 de março)</h2>
-                </div>
-                
-                <div class="hotel-info">
-                    <h3>Sotetsu Fresa Inn Hamamatsucho-Daimon</h3>
-                    <div class="hotel-details">
-                        <div class="detail-item">
-                            <span class="detail-label">Check-in:</span>
-                            <span class="detail-value">16 de março (domingo) - por volta das 17:00</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Check-out:</span>
-                            <span class="detail-value">18 de março (terça)</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Noites:</span>
-                            <span class="detail-value">2 noites</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="day">
-                    <div class="day-date">16 de Março (Domingo)</div>
-                    <ul class="day-activities">
-                        <li><span class="activity-text">17:00 – Chegada em Tokyo</span></li>
-                        <li><span class="activity-text">Check-in no hotel</span></li>
-                        <li>
-                            <span class="activity-text">Tokyo Tower</span>
-                            <span class="icon-link">
-                                <a href="https://www.google.com/maps/search/?api=1&query=Tokyo+Tower" target="_blank" title="Ver no Google Maps" class="map-icon">📍</a>
-                            </span>
-                        </li>
-                        <li>
-                            <span class="activity-text">Templo Zojoji</span>
-                            <span class="icon-link">
-                                <a href="https://www.google.com/maps/search/?api=1&query=Zojoji+Temple+Tokyo" target="_blank" title="Ver no Google Maps" class="map-icon">📍</a>
-                            </span>
-                        </li>
-                        <li><span class="activity-text">Jantar na região</span></li>
-                    </ul>
-                </div>
-                
-                <div class="day">
-                    <div class="day-date">17 de Março (Segunda)</div>
-                    <ul class="day-activities">
-                        <li>
-                            <span class="activity-text">Meiji Shrine</span>
-                            <span class="icon-link">
-                                <a href="https://www.google.com/maps/search/?api=1&query=Meiji+Shrine+Tokyo" target="_blank" title="Ver no Google Maps" class="map-icon">📍</a>
-                            </span>
-                        </li>
-                        <li>
-                            <span class="activity-text">Harajuku</span>
-                            <span class="icon-link">
-                                <a href="https://www.google.com/maps/search/?api=1&query=Harajuku+Tokyo" target="_blank" title="Ver no Google Maps" class="map-icon">📍</a>
-                            </span>
-                        </li>
-                        <li>
-                            <span class="activity-text">Shibuya</span>
-                            <span class="icon-link">
-                                <a href="https://www.google.com/maps/search/?api=1&query=Shibuya+Crossing+Tokyo" target="_blank" title="Ver no Google Maps" class="map-icon">📍</a>
-                            </span>
-                        </li>
-                        <li>
-                            <span class="activity-text">Shinjuku à noite</span>
-                            <span class="icon-link">
-                                <a href="https://www.google.com/maps/search/?api=1&query=Shinjuku+Tokyo" target="_blank" title="Ver no Google Maps" class="map-icon">📍</a>
-                            </span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="day">
-                    <div class="day-date">18 de Março (Terça)</div>
-                    <ul class="day-activities">
-                        <li>
-                            <span class="activity-text">Tsukiji Outer Market</span>
-                            <span class="icon-link">
-                                <a href="https://www.google.com/maps/search/?api=1&query=Tsukiji+Outer+Market+Tokyo" target="_blank" title="Ver no Google Maps" class="map-icon">📍</a>
-                            </span>
-                        </li>
-                        <li>
-                            <span class="activity-text">Ginza</span>
-                            <span class="icon-link">
-                                <a href="https://www.google.com/maps/search/?api=1&query=Ginza+Tokyo" target="_blank" title="Ver no Google Maps" class="map-icon">📍</a>
-                            </span>
-                        </li>
-                        <li><span class="activity-text">Voo para Hokkaido</span></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- HOKKAIDO -->
-            <div class="section">
-                <div class="section-header">
-                    <h2>HOKKAIDO – Sapporo (19-23 de março)</h2>
-                </div>
-                
-                <div class="hotel-info">
-                    <h3>Hotel Vista Sapporo Odori</h3>
-                    <div class="hotel-details">
-                        <div class="detail-item">
-                            <span class="detail-label">Check-in:</span>
-                            <span class="detail-value">19 de março (quarta) - por volta das 21:00</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Check-out:</span>
-                            <span class="detail-value">23 de março (domingo)</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Noites:</span>
-                            <span class="detail-value">4 noites</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="day">
-                    <div class="day-date">19 de Março (Quarta)</div>
-                    <ul class="day-activities">
-                        <li><span class="activity-text">21:00 – Chegada em Sapporo</span></li>
-                        <li><span class="activity-text">Check-in no hotel</span></li>
-                    </ul>
-                </div>
-                
-                <div class="day">
-                    <div class="day-date">20 de Março (Quinta)</div>
-                    <ul class="day-activities">
-                        <li>
-                            <span class="activity-text">Jozankei Onsen</span>
-                            <span class="icon-link">
-                                <a href="https://www.google.com/maps/search/?api=1&query=Jozankei+Onsen+Hokkaido" target="_blank" title="Ver no Google Maps" class="map-icon">📍</a>
-                            </span>
-                        </li>
-                        <li><span class="activity-text">Onsen privada externa (Rotenburo)</span></li>
-                    </ul>
-                </div>
-                
-                <div class="day">
-                    <div class="day-date">21 de Março (Sexta)</div>
-                    <ul class="day-activities">
-                        <li>
-                            <span class="activity-text">Odori Park</span>
-                            <span class="icon-link">
-                                <a href="https://www.google.com/maps/search/?api=1&query=Odori+Park+Sapporo" target="_blank" title="Ver no Google Maps" class="map-icon">📍</a>
-                            </span>
-                        </li>
-                        <li>
-                            <span class="activity-text">Sapporo Clock Tower</span>
-                            <span class="icon-link">
-                                <a href="https://www.google.com/maps/search/?api=1&query=Sapporo+Clock+Tower" target="_blank" title="Ver no Google Maps" class="map-icon">📍</a>
-                            </span>
-                        </li>
-                        <li>
-                            <span class="activity-text">Mount Moiwa (pôr do sol)</span>
-                            <span class="icon-link">
-                                <a href="https://www.google.com/maps/search/?api=1&query=Mount+Moiwa+Sapporo" target="_blank" title="Ver no Google Maps" class="map-icon">📍</a>
-                            </span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="day">
-                    <div class="day-date">22 de Março (Sábado)</div>
-                    <ul class="day-activities">
-                        <li>
-                            <span class="activity-text">Otaru (bate-volta)</span>
-                            <span class="icon-link">
-                                <a href="https://www.google.com/maps/search/?api=1&query=Otaru+Canal+Hokkaido" target="_blank" title="Ver no Google Maps" class="map-icon">📍</a>
-                            </span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="day">
-                    <div class="day-date">23 de Março (Domingo)</div>
-                    <ul class="day-activities">
-                        <li>
-                            <span class="activity-text">Sapporo Kokusai Ski Resort</span>
-                            <span class="icon-link">
-                                <a href="https://www.google.com/maps/search/?api=1&query=Sapporo+Kokusai+Ski+Resort" target="_blank" title="Ver no Google Maps" class="map-icon">📍</a>
-                            </span>
-                        </li>
-                        <li><span class="activity-text">Check-out do hotel</span></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- OSAKA -->
-            <div class="section">
-                <div class="section-header">
-                    <h2>OSAKA (24-27 de março)</h2>
-                </div>
-                
-                <div class="hotel-info">
-                    <h3>Arrow Hotel in ShinsaiBashi</h3>
-                    <div class="hotel-details">
-                        <div class="detail-item">
-                            <span class="detail-label">Check-in:</span>
-                            <span class="detail-value">23 de março (domingo) - a partir das 12:30</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Check-out:</span>
-                            <span class="detail-value">27 de março (quinta) - até 12:00</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Noites:</span>
-                            <span class="detail-value">4 noites</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Confirmação:</span>
-                            <span class="detail-value">6960.710.640 | PIN: 4858</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Telefone:</span>
-                            <span class="detail-value">+81 6 6211 8441</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Café da Manhã:</span>
-                            <span class="detail-value">✓ Incluído</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">WiFi:</span>
-                            <span class="detail-value">✓ Gratuito</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Preço:</span>
-                            <span class="detail-value">R$ 1.329 (¥39.060)</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="day">
-                    <div class="day-date">24 de Março (Segunda)</div>
-                    <ul class="day-activities">
-                        <li><span class="activity-text">Chegada em Osaka</span></li>
-                        <li>
-                            <span class="activity-text">Dotonbori</span>
-                            <span class="icon-link">
-                                <a href="https://www.google.com/maps/search/?api=1&query=Dotonbori+Osaka" target="_blank" title="Ver no Google Maps" class="map-icon">📍</a>
-                            </span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="day">
-                    <div class="day-date">25 de Março (Terça)</div>
-                    <ul class="day-activities">
-                        <li>
-                            <span class="activity-text">Nara</span>
-                            <span class="icon-link">
-                                <a href="https://www.google.com/maps/search/?api=1&query=Nara+Park+Japan" target="_blank" title="Ver no Google Maps" class="map-icon">📍</a>
-                            </span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="day">
-                    <div class="day-date">26 de Março (Quarta)</div>
-                    <ul class="day-activities">
-                        <li>
-                            <span class="activity-text">Universal Studios Japan</span>
-                            <span class="icon-link">
-                                <a href="https://www.google.com/maps/search/?api=1&query=Universal+Studios+Japan+Osaka" target="_blank" title="Ver no Google Maps" class="map-icon">📍</a>
-                                <a href="https://drive.google.com/file/d/1UZwN0fIHns276lL31lc1t8PGEVciHykt/view?usp=sharing" target="_blank" title="Ver voucher/QR code" class="ticket-icon">🎟️</a>
-                            </span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="day">
-                    <div class="day-date">27 de Março (Quinta)</div>
-                    <ul class="day-activities">
-                        <li>
-                            <span class="activity-text">Shinsekai</span>
-                            <span class="icon-link">
-                                <a href="https://www.google.com/maps/search/?api=1&query=Shinsekai+Osaka" target="_blank" title="Ver no Google Maps" class="map-icon">📍</a>
-                            </span>
-                        </li>
-                        <li>
-                            <span class="activity-text">Kuromon Market</span>
-                            <span class="icon-link">
-                                <a href="https://www.google.com/maps/search/?api=1&query=Kuromon+Market+Osaka" target="_blank" title="Ver no Google Maps" class="map-icon">📍</a>
-                            </span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- KYOTO -->
-            <div class="section">
-                <div class="section-header">
-                    <h2>KYOTO (28-29 de março)</h2>
-                </div>
-                
-                <div class="hotel-info">
-                    <h3>M's Hotel Sanjo Wakoku</h3>
-                    <div class="hotel-details">
-                        <div class="detail-item">
-                            <span class="detail-label">Telefone:</span>
-                            <span class="detail-value">+81 75 320 4141</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Check-in:</span>
-                            <span class="detail-value">27 de março (quinta) - tarde</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Check-out:</span>
-                            <span class="detail-value">29 de março (sábado)</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Noites:</span>
-                            <span class="detail-value">2 noites</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">WiFi:</span>
-                            <span class="detail-value">✓ Gratuito</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="day">
-                    <div class="day-date">28 de Março (Sexta)</div>
-                    <ul class="day-activities">
-                        <li>
-                            <span class="activity-text">Fushimi Inari (milhares de torii vermelhos)</span>
-                            <span class="icon-link">
-                                <a href="https://www.google.com/maps/search/?api=1&query=Fushimi+Inari+Shrine+Kyoto" target="_blank" title="Ver no Google Maps" class="map-icon">📍</a>
-                            </span>
-                        </li>
-                        <li>
-                            <span class="activity-text">Higashiyama (distrito histórico)</span>
-                            <span class="icon-link">
-                                <a href="https://www.google.com/maps/search/?api=1&query=Higashiyama+District+Kyoto" target="_blank" title="Ver no Google Maps" class="map-icon">📍</a>
-                            </span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="day">
-                    <div class="day-date">29 de Março (Sábado)</div>
-                    <ul class="day-activities">
-                        <li>
-                            <span class="activity-text">F1 Suzuka (Grande Prêmio do Japão)</span>
-                            <span class="icon-link">
-                                <a href="https://www.google.com/maps/search/?api=1&query=Suzuka+Circuit+Japan" target="_blank" title="Ver no Google Maps" class="map-icon">📍</a>
-                                <a href="https://drive.google.com/file/d/14f1K6OG4E1RUe0ZXPMdkQdtOEaMS3oCv/view?usp=sharing" target="_blank" title="Ver voucher/QR code" class="ticket-icon">🎟️</a>
-                            </span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- TOKYO PARTE 2 -->
-            <div class="section">
-                <div class="section-header">
-                    <h2>TÓQUIO – Parte 2 (30 mar - 4 abr)</h2>
-                </div>
-                
-                <div class="hotel-info">
-                    <h3>The Aoca Tokyo Kaminoge</h3>
-                    <div class="hotel-details">
-                        <div class="detail-item">
-                            <span class="detail-label">Check-in:</span>
-                            <span class="detail-value">30 de março (domingo) - a partir das 15:00</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Check-out:</span>
-                            <span class="detail-value">4 de abril (sexta) - até 10:00</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Noites:</span>
-                            <span class="detail-value">5 noites</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Confirmação:</span>
-                            <span class="detail-value">6381.441.253 | PIN: 2626</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Tipo:</span>
-                            <span class="detail-value">Apartamento independente com cozinha completa</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Telefone:</span>
-                            <span class="detail-value">+81 70 1560 5202</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Preço:</span>
-                            <span class="detail-value">R$ 4.865 (¥145.584)</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="day">
-                    <div class="day-date">30 de Março (Domingo)</div>
-                    <ul class="day-activities">
-                        <li><span class="activity-text">Chegada em Tokyo</span></li>
-                        <li>
-                            <span class="activity-text">Shinjuku</span>
-                            <span class="icon-link">
-                                <a href="https://www.google.com/maps/search/?api=1&query=Shinjuku+Tokyo" target="_blank" title="Ver no Google Maps" class="map-icon">📍</a>
-                            </span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="day">
-                    <div class="day-date">31 de Março (Segunda)</div>
-                    <ul class="day-activities">
-                        <li>
-                            <span class="activity-text">Tokyo Disneyland</span>
-                            <span class="icon-link">
-                                <a href="https://www.google.com/maps/search/?api=1&query=Tokyo+Disneyland" target="_blank" title="Ver no Google Maps" class="map-icon">📍</a>
-                                <a href="https://drive.google.com/file/d/1Rm39EtcN6Vept_iLLTlyKuaUboJOFDml/view?usp=sharing" target="_blank" title="Ver voucher/QR code" class="ticket-icon">🎟️</a>
-                            </span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="day">
-                    <div class="day-date">1 de Abril (Terça)</div>
-                    <ul class="day-activities">
-                        <li><span class="activity-text">Dia livre</span></li>
-                    </ul>
-                </div>
-                
-                <div class="day">
-                    <div class="day-date">2 de Abril (Quarta)</div>
-                    <ul class="day-activities">
-                        <li>
-                            <span class="activity-text">Fuji-Q Highland</span>
-                            <span class="icon-link">
-                                <a href="https://www.google.com/maps/search/?api=1&query=Fuji-Q+Highland" target="_blank" title="Ver no Google Maps" class="map-icon">📍</a>
-                                <a href="https://drive.google.com/file/d/1rld6IqdLzUPY9MY02ef_03obKt-doVR8/view?usp=sharing" target="_blank" title="Ver voucher/QR code" class="ticket-icon">🎟️</a>
-                            </span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="day">
-                    <div class="day-date">3 de Abril (Quinta)</div>
-                    <ul class="day-activities">
-                        <li>
-                            <span class="activity-text">Ghibli Park às 15:00 (em decisão)</span>
-                            <span class="icon-link">
-                                <a href="https://www.google.com/maps/search/?api=1&query=Ghibli+Park+Japan" target="_blank" title="Ver no Google Maps" class="map-icon">📍</a>
-                                <a href="https://drive.google.com/file/d/16JwxGiHf1FOzsFdwTLhLyejN7TEXCW0k/view?usp=sharing" target="_blank" title="Ver voucher/QR code" class="ticket-icon">🎟️</a>
-                            </span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="day">
-                    <div class="day-date">4 de Abril (Sexta)</div>
-                    <ul class="day-activities">
-                        <li>
-                            <span class="activity-text">Asakusa</span>
-                            <span class="icon-link">
-                                <a href="https://www.google.com/maps/search/?api=1&query=Asakusa+Tokyo" target="_blank" title="Ver no Google Maps" class="map-icon">📍</a>
-                            </span>
-                        </li>
-                        <li>
-                            <span class="activity-text">Tokyo Skytree</span>
-                            <span class="icon-link">
-                                <a href="https://www.google.com/maps/search/?api=1&query=Tokyo+Skytree" target="_blank" title="Ver no Google Maps" class="map-icon">📍</a>
-                            </span>
-                        </li>
-                        <li><span class="activity-text">Check-out do hotel</span></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- EXTRA -->
-            <div class="section">
-                <div class="section-header">
-                    <h2>Extra (11 de abril)</h2>
-                </div>
-                
-                <div class="day">
-                    <div class="day-date">11 de Abril (Sexta)</div>
-                    <ul class="day-activities">
-                        <li>
-                            <span class="activity-text">Tokyo DisneySea</span>
-                            <span class="icon-link">
-                                <a href="https://www.google.com/maps/search/?api=1&query=Tokyo+DisneySea" target="_blank" title="Ver no Google Maps" class="map-icon">📍</a>
-                                <a href="https://drive.google.com/file/d/1CESWIcX_L9MftXSFtqOfJmNy_bvU0qj1/view?usp=sharing" target="_blank" title="Ver voucher/QR code" class="ticket-icon">🎟️</a>
-                            </span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- RESUMO FINANCEIRO -->
-            <div class="summary">
-                <h3>Resumo Financeiro - Hospedagem</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Hotel</th>
-                            <th>Cidade</th>
-                            <th>Noites</th>
-                            <th>Preço (R$)</th>
-                            <th>Preço (¥)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Sotetsu Fresa Inn</td>
-                            <td>Tokyo</td>
-                            <td>2</td>
-                            <td>-</td>
-                            <td>-</td>
-                        </tr>
-                        <tr>
-                            <td>Hotel Vista Sapporo</td>
-                            <td>Hokkaido</td>
-                            <td>4</td>
-                            <td>-</td>
-                            <td>-</td>
-                        </tr>
-                        <tr>
-                            <td>Arrow Hotel ShinsaiBashi</td>
-                            <td>Osaka</td>
-                            <td>4</td>
-                            <td>R$ 1.329</td>
-                            <td>¥39.060</td>
-                        </tr>
-                        <tr>
-                            <td>M's Hotel Sanjo Wakoku</td>
-                            <td>Kyoto</td>
-                            <td>2</td>
-                            <td>-</td>
-                            <td>-</td>
-                        </tr>
-                        <tr>
-                            <td>The Aoca Tokyo Kaminoge</td>
-                            <td>Tokyo</td>
-                            <td>5</td>
-                            <td>R$ 4.865</td>
-                            <td>¥145.584</td>
-                        </tr>
-                        <tr class="total-row">
-                            <td colspan="2"><strong>TOTAL (parcial - informações confirmadas)</strong></td>
-                            <td><strong>17 noites</strong></td>
-                            <td><strong>R$ 6.194*</strong></td>
-                            <td><strong>¥184.644*</strong></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p style="margin-top: 15px; font-size: 0.9em; color: #555;"><em>* Valores parciais. Sotetsu Fresa Inn (Tokyo 1), Hotel Vista Sapporo e M's Hotel Sanjo (Kyoto) aguardam confirmação de preços.</em></p>
-            </div>
+
+        <div class="tabs-container">
+            <button class="tab-button active" onclick="switchTab(0)">🗼 Tokyo Parte 1</button>
+            <button class="tab-button" onclick="switchTab(1)">❄️ Hokkaido</button>
+            <button class="tab-button" onclick="switchTab(2)">🏯 Osaka</button>
+            <button class="tab-button" onclick="switchTab(3)">🏮 Kyoto</button>
+            <button class="tab-button" onclick="switchTab(4)">🗼 Tokyo Parte 2</button>
+            <button class="tab-button" onclick="switchTab(5)">✨ Extra</button>
         </div>
-        
+
+        <div class="content">
+            <div id="tab-0" class="tab-content active"><div class="loading">Carregando Tokyo Parte 1...</div></div>
+            <div id="tab-1" class="tab-content"><div class="loading">Carregando Hokkaido...</div></div>
+            <div id="tab-2" class="tab-content"><div class="loading">Carregando Osaka...</div></div>
+            <div id="tab-3" class="tab-content"><div class="loading">Carregando Kyoto...</div></div>
+            <div id="tab-4" class="tab-content"><div class="loading">Carregando Tokyo Parte 2...</div></div>
+            <div id="tab-5" class="tab-content"><div class="loading">Carregando Extra...</div></div>
+        </div>
+
         <footer>
-            <p>Criado com amor para nossa aventura japonesa</p>
-            <p>Rafael & Ariana - 2026</p>
+            <p>✈️ Criado com amor para nossa aventura japonesa ❤️</p>
+            <p style="font-size: 0.85em; margin-top: 5px;">Rafael & Ariana - 2026</p>
         </footer>
     </div>
+
+    <script>
+        // URLs dos arquivos markdown no repositório source
+        const files = [
+            {
+                name: '01-tokyo-parte1.md',
+                url: 'https://raw.githubusercontent.com/rafaelcarraska/trip-japan-26/main/01-tokyo-parte1.md'
+            },
+            {
+                name: '02-hokkaido-sapporo.md',
+                url: 'https://raw.githubusercontent.com/rafaelcarraska/trip-japan-26/main/02-hokkaido-sapporo.md'
+            },
+            {
+                name: '03-osaka.md',
+                url: 'https://raw.githubusercontent.com/rafaelcarraska/trip-japan-26/main/03-osaka.md'
+            },
+            {
+                name: '04-kyoto.md',
+                url: 'https://raw.githubusercontent.com/rafaelcarraska/trip-japan-26/main/04-kyoto.md'
+            },
+            {
+                name: '05-tokyo-parte2.md',
+                url: 'https://raw.githubusercontent.com/rafaelcarraska/trip-japan-26/main/05-tokyo-parte2.md'
+            },
+            {
+                name: '06-tokyo-extra.md',
+                url: 'https://raw.githubusercontent.com/rafaelcarraska/trip-japan-26/main/06-tokyo-extra.md'
+            }
+        ];
+
+        let currentTab = 0;
+
+        // Carregar conteúdo dos arquivos markdown
+        async function loadMarkdownFiles() {
+            for (let i = 0; i < files.length; i++) {
+                try {
+                    const response = await fetch(files[i].url);
+                    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                    
+                    const markdown = await response.text();
+                    const html = marked.parse(markdown);
+                    document.getElementById(`tab-${i}`).innerHTML = html;
+                } catch (error) {
+                    document.getElementById(`tab-${i}`).innerHTML = 
+                        `<div class="error">❌ Erro ao carregar ${files[i].name}: ${error.message}</div>`;
+                }
+            }
+        }
+
+        function switchTab(index) {
+            // Remover active de todos os botões
+            document.querySelectorAll('.tab-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Remover active de todos os conteúdos
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+
+            // Adicionar active ao botão clicado
+            document.querySelectorAll('.tab-button')[index].classList.add('active');
+
+            // Adicionar active ao conteúdo correspondente
+            document.getElementById(`tab-${index}`).classList.add('active');
+
+            // Scroll para o topo do conteúdo
+            document.querySelector('.content').scrollTop = 0;
+
+            currentTab = index;
+        }
+
+        // Carregar conteúdo ao iniciar
+        loadMarkdownFiles();
+
+        // Teclado para navegação
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft' && currentTab > 0) {
+                switchTab(currentTab - 1);
+            } else if (e.key === 'ArrowRight' && currentTab < files.length - 1) {
+                switchTab(currentTab + 1);
+            }
+        });
+    </script>
 </body>
 </html>
